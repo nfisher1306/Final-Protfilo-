@@ -1,55 +1,60 @@
 # Nikolas S Fisher
 #
-# 11/1/2022
+# Date: 11/15/2022
 #
 #
-# This program will ask the user for the length of a side, a fill color, and what shape
-# they would like to draw (square/triangle).
+#
+#
+#
 #
 #
 
 import turtle
-Jerry = turtle.Turtle()
-wn = turtle.Screen()
-shapes = ["Triangle", "Square"]
-print(shapes)
-input1 = input("Pick a shape to draw:")
-colors = ["Blue", "Green", "Purple", "Red"]
-
-for i in colors:
-    print(i)
-
-input2 = str(input(print("Please pick a color:")))
 
 
-#Jerry = turtle.Turtle()
-
-if input1 == "Triangle":
-
-    side1 = int(input("Length of bottom in pixels:"))
-    Jerry.fillcolor(input2)
-    Jerry.begin_fill()
-
-    for i in range(3):
-        Jerry.forward(side1)
-        Jerry.left(120)
-    Jerry.end_fill()
-
-    #side1 = int(input(print("Length of 2nd side:")))
-    #Jerry.forward(side1)
 
 
-elif input1 == "Square":
-    Jerry.fillcolor(input2)
-    Jerry.begin_fill()
-    sides = int(input("Pick the length of sides for Square"))
+def drawSquare(t, sz, z, x):
+    """Get Turtle t to draw a square of sz side"""""
+    alex.penup()
+    alex.setposition(z, x)
+    alex.pendown()
     for i in range(4):
-        Jerry.forward(sides)
-        Jerry.right(90)
+        t.forward(sz)
+        t.left(90)
 
-    Jerry.end_fill()
+    #alex.penup()
+    #alex.setposition(z, x)
+    #alex.pendown()
+
+
+wn = turtle.Screen()
+alex = turtle.Turtle()
+alex.color("blue")
+
+size=200
+coordx=0
+coordy=0
+
+for i in range(6):
+    drawSquare(alex, size, coordx, coordy)
+    size-=40
+    coordx+=20
+    coordy+=20
+
+
+# #alex.setposition(20,20)
+
+# drawSquare(alex, 160, 20, 20)
+# # #alex.setposition(40,40)
+#
+# drawSquare(alex, 120, 40, 40)
+# # #alex.setposition(60,60)
+#
+# drawSquare(alex, 80, 60, 60)
+# # #alex.setposition(80,80)
+#
+# drawSquare(alex, 40, 80, 80)
 
 
 wn.exitonclick()
-
-
